@@ -1,0 +1,118 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(69,34,195);
+background: linear-gradient(159deg, rgba(69,34,195,0.927608543417367) 0%, rgba(253,45,45,1) 100%);
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 100vh;
+}
+.game{
+    overflow: hidden;
+    border-radius: 15px;
+    width:65vw;
+    height: 60vh;
+    position: relative;
+display: flex;
+// margin: 420px 0 419px;
+}
+.player{
+    width: 50%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &:nth-last-of-type(2){
+        background-color: rgba(255, 255, 255, 0.6);
+        transition: all 0.5s linear;
+    }
+    &:nth-last-of-type(1){
+        background-color: rgba(255, 255, 255, 0.3);
+        transition: all 0.5s linear;
+
+    }
+    & > div {
+        gap:15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:last-child{
+            padding: 20px 60px;
+            background-color: rgb(194, 19, 19, 0.7);
+            border-radius: 15px;
+        }
+    }
+
+}
+
+.btn{
+position: absolute;
+left:50%;
+transform: translate(-50%, -50%);
+border: none;
+border-radius: 10px;
+padding: 7px 30px;
+font-size: 20px;
+cursor: pointer;
+box-shadow: 0 0 10px 0px grey;
+transition: all 0.5s ease-in-out;
+&:hover{
+    box-shadow: 0 0 10px 1px black;
+    transition: all 0.5s ease-in-out;
+}
+}
+
+.dice{
+    display: none;
+    position: absolute;
+    top:31%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 20px white;
+    &-image{
+        background-image: url(pig.png);
+        transform: scaleX(-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#btnNew{
+    top:9%;
+}
+#btnRoll{
+    top:65%;
+}
+#btnHold{
+    top:77%;
+}
+h1{
+    font-size: 46px;
+    & + p {
+        font-size: 50px;
+        font-weight: 400;
+        color: rgb(194, 19, 19);
+    }
+}
+h2, p{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    color:white;
+    font-size: 24px;
+}
