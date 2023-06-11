@@ -15,7 +15,51 @@ background: linear-gradient(159deg, rgba(69,34,195,0.927608543417367) 0%, rgba(2
 background-repeat: no-repeat;
 background-size: cover;
 min-height: 100vh;
+
 }
+
+input[type="checkbox"]{
+    display:none;
+}
+label{
+    position: absolute;
+    width:50px;
+    height: 50px;
+    top:0;
+    left:0;
+    font-size: 30px;
+    outline: none;
+    z-index:101;
+    
+}
+.info{
+    transition: 1.5s ease-in-out;
+    position: absolute;
+    left:-100%;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background: radial-gradient(ellipse at top,rgb(111, 28, 164)  0%, #080e45 100%);
+    z-index: 100;
+}
+input:checked + .info{
+    left:0;
+    padding:7rem 10rem 7rem;
+    h2{
+        text-align: center;
+        font-size: 3rem;
+        margin:0 0 40px;
+    }
+    p{
+       font-size: 1.75rem; 
+       margin:10px 0  0;
+       &:last-child{
+        margin:50px 0  0;
+        text-align: center;
+       }
+    }
+}
+
 .game{
     overflow: hidden;
     border-radius: 15px;
@@ -23,6 +67,7 @@ min-height: 100vh;
     height: 60vh;
     position: relative;
 display: flex;
+
 // margin: 420px 0 419px;
 }
 .player{
@@ -92,7 +137,26 @@ transition: all 0.5s ease-in-out;
         height: 100%;
     }
 }
-
+.chooseScore{
+    display:block;
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    top:31%;
+    left:50%;
+    font-size: 16px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 0 10px 0px grey;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        box-shadow: 0 0 10px 1px black;
+        transition: all 0.5s ease-in-out;
+    }
+    cursor: pointer;
+}
 #btnNew{
     top:9%;
 }
@@ -115,4 +179,112 @@ h2, p{
     font-weight: 300;
     color:white;
     font-size: 24px;
+}
+@media (max-width:1200px) {
+    .chooseScore {
+        top: 47%;
+    }
+    input:checked + .info {
+        left: 0;
+        
+        padding: 3rem 10rem 3rem;
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+        }
+    }
+    .dice {
+        display: none;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 80px;
+        height: 80px;
+        border-radius: 16px;
+        box-shadow: 0px 0px 20px white;
+        transform: rotate(-90%);
+    }
+    .player {
+    width: 60%;
+    height: 47%;
+    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding:60px 0 60px 0;
+    &:last-child{
+    padding:60px 0 140px 0;
+    height:53%
+    }
+        > div {
+            gap: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &:last-child {
+                padding: 5px 60px;
+                background-color: rgba(194, 19, 19, 0.7);
+                border-radius: 15px;
+            }
+        }
+    }
+    .game {
+        overflow: hidden;
+        border-radius: 15px;
+        width: 90vw;
+        height: 95vh;
+        position: relative;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+    #btnHold {
+        left:70%;
+        top: 92%;
+        
+    }
+    #btnRoll {
+        left:30%;
+        top: 92%;
+        
+    }
+    #btnNew {
+        top: 5.5%;
+    }
+    .btn{
+        padding: 0px 15px;
+    }
+    
+}
+@media (max-width:900px){
+    .player {
+        width: 85%;
+    }
+    input:checked + .info {
+        padding: 3rem;
+        
+        p{
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            &:last-child{
+                margin: 100px 0 0;
+            }
+        }
+    }
+}
+@media (max-width:600px){
+    .player {
+        width: 95%;
+    }
+    label{
+        font-size: 22px;
+    }
+    input:checked + .info p {
+        font-size: 1.1rem;
+        margin: 10px 0 0;
+    }
 }

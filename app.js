@@ -4,6 +4,7 @@ const possibleChoices=document.querySelectorAll('button')
 
 const diceBox = document.querySelector(".dice")
 const dice = document.querySelector('.dice-image')
+const chooseScore = document.querySelector(".chooseScore")
 
 const total1 = document.querySelector(".total1")
 const total2 =document.querySelector(".total2")
@@ -16,6 +17,7 @@ let current=[0, 0];
 let total=[0, 0];
 let turn = 0;
 
+let winScore=50;
 
 possibleChoices.forEach(e1=> e1.addEventListener('click', function a(e) {
 
@@ -45,13 +47,15 @@ possibleChoices.forEach(e1=> e1.addEventListener('click', function a(e) {
         current1.textContent=0;
         current2.textContent=0;
         total=[0, 0];
-        document.querySelectorAll(".btn").forEach(e1 => e1.style.cursor= "pointer")
-        // console.log(randomDice)
+        chooseScore.style.display="";
+        document.querySelectorAll(".btn").forEach(e1 => e1.style.cursor= "pointer");
             break;
         case "btnRoll":
+            winScore=chooseScore.value>0&&chooseScore.value<250?chooseScore.value:50;
+        chooseScore.style.display="none";
             //Generate random dice roll
         randomDice = Math.floor(Math.random()*6+1)
-        //console.log(randomDice)
+        
 
             //Display dice roll
         dice.style.backgroundImage="url('Dice-"+randomDice+".png')";
@@ -73,7 +77,7 @@ possibleChoices.forEach(e1=> e1.addEventListener('click', function a(e) {
                 
             //displaying total
                 eval("total" + (turn+1) +".textContent="+total[turn])
-            if(total[turn]>=50) playerWin()
+            if(total[turn]>=winScore) playerWin()
             else switchPlayer()
             break;
         default:
@@ -94,8 +98,7 @@ function switchPlayer(){
     }
 }
 function playerWin(){
-    // document.querySelector("btnRoll").disabled="true"
-    // document.querySelector("btnHold").disabled="true"
+
     eval("total" + (turn+1) +".textContent= 'Win'")
     game=false;
     document.querySelectorAll(".btn:not(#btnNew)").forEach(e1 => e1.style.cursor="not-allowed")

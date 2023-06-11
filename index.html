@@ -5,18 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="/Dice-1.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
+    <input type="checkbox" id="instruction">
+    <div class="info">
+        <h2>
+            Pig Dice
+        </h2>
+        <p>
+            The Game can be played with 2 players. Player roll dice, score points and save result. If player get 1 turn ends. Each Player should score enough points to win.
+        </p>
+        <p>
+            You can change Maximum points that should be scored by each player.
+        </p>
+            <p>
+            By [MaxScore] square before starting game.
+            </p>
+        <p>
+            Maximum score can be changed from 0 untill 250. Default is 50
+        </p>
+        <p>
+            Press 🔄 to start new game 
+        </p>
+        <p>
+            Press 🎲 to start new game
+        </p>
+        <p>
+            Press 📥 to save your result
+        </p>
+        <p>
+            Good luck friend!!!
+        </p>
+    </div>
+    <label for="instruction">🆘</label>
+    
+        
+    
     <div class="game">
         <button id="btnNew" class="btn">New Game 🔄</button>
         <div class="dice">
             <div class="dice-image">
             </div>
-        </div>btn
+            
+        </div>
+        <input type="number" id="btnScore" class="chooseScore" placeholder="MaxScore" maxlength="3">
         <button id="btnRoll" class="btn">Roll Dice 🎲</button>
         <button id="btnHold" class="btn">Hold 📥</button>
         <div class="player">
