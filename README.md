@@ -1,2 +1,2 @@
 # pigGame
-Game for fun to play with friend
+Game for fun to play with friends
